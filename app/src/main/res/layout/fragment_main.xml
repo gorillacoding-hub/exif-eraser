@@ -155,6 +155,25 @@
                     app:icon="@drawable/ic_settings" />
             </FrameLayout>
 
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:minWidth="@dimen/icon_docked_toolbar"
+                app:layout_overflowText="Synthetic Metadata">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/action_synthetic_metadata"
+                    style="?attr/materialIconButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:contentDescription="Synthetic metadata test mode"
+                    android:tooltipText="Synthetic metadata test mode"
+                    app:icon="@drawable/ic_settings" />
+            </FrameLayout>
+
         </com.google.android.material.overflow.OverflowLinearLayout>
     </com.google.android.material.dockedtoolbar.DockedToolbarLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
