@@ -193,4 +193,5 @@ dependencies {
     implementation(libs.bundles.implementation)
     ksp(libs.bundles.ksp)
     testImplementation(libs.bundles.implementation.test)
+    implementation("androidx.exifinterface:exifinterface:1.4.0")
 }
