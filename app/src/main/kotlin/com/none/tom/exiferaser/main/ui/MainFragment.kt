@@ -527,8 +527,16 @@ class MainFragment :
             binding.actionSettings.performClick()
         }
 
-        (binding.actionSyntheticMetadata.parent as FrameLayout).setOnClickListener {
-            binding.actionSyntheticMetadata.performClick()
+        binding.actionSyntheticMetadata?.let { button ->
+            (button.parent as? FrameLayout)?.setOnClickListener {
+                button.performClick()
+            }
+
+            button.setOnClickListener {
+                chooseImageForSyntheticMetadata.launch(
+                    arrayOf("image/jpeg", "image/png", "image/webp")
+                )
+            }
         }
 
         binding.actionClipboardPaste.setOnClickListener {
@@ -560,12 +568,6 @@ class MainFragment :
 
         binding.actionSettings.setOnClickListener {
             viewModel.handleSettings()
-        }
-
-        binding.actionSyntheticMetadata.setOnClickListener {
-            chooseImageForSyntheticMetadata.launch(
-                arrayOf("image/jpeg", "image/png", "image/webp")
-            )
         }
 
         binding.dockedToolbar.doOnLayout {
@@ -673,4 +675,4 @@ class MainFragment :
             }
         }
     }
-}
+    }
